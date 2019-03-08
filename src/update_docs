@@ -1,0 +1,9 @@
+#!/bin/bash
+cd ~/dev/pytest-cdm930/pyapp
+echo "Running tests..."
+pytest --html=./docs/build/html/report.html --verbose
+cd docs
+echo "Regenerating docs..."
+sphinx-apidoc -o source/ ../src/pyapp
+make html
+echo "Documentation updated."
